@@ -1,0 +1,28 @@
+<a href="#/" class="btn btn-info btn-md">home</a>
+<h2 class="text-center">{{title | uppercase}}</h2>
+
+<ul class="list-group">
+  <li class="list-group-item" ng-repeat="buy in buyTable">
+
+		<div class="row">
+		  <div class="col-md-4">
+		  	<img ng-src="{{buy.image}}">
+		  	<button class="btn btn-primary btn-md"><img style="width: 18px" src="images/Button-Download.png"></button>
+  			
+		  </div>
+		  <div class="col-md-4">
+		  	<h4 class="list-group-item-heading">{{buy.titleItem}}</h4>
+		    <p class="list-group-item-text">{{buy.artistName}}</p>
+		    <button class="btn btn-info btn-md"><img src="images/Button-Info.png"></button>
+		  </div>
+		  <div class="col-md-4">
+		  	<p class="list-group-item-text" class="pull-right">{{buy.price | currency}}</p>
+		  </div>
+		</div>
+
+  </li>
+</ul>
+
+<div class="jumbotron pull-right">
+  <div>Precio total: {{totalPrice | currency}}</div>
+</div>
