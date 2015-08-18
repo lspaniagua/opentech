@@ -37,6 +37,19 @@ app.directive('myFooter', function() {
 });
 
 /**
+ * Total price filter
+ */
+app.filter('totalPrice', function() {
+  return function(buyTable) {
+    var totalPrice = 0;
+    angular.forEach(buyTable, function(value) {
+      totalPrice += parseInt(value.price);
+    });
+    return totalPrice;
+  };
+});
+
+/**
  * Factory Carousel
  */
 app.factory('carousel', ['$http', function($http) {
@@ -73,14 +86,6 @@ app.factory('buyTable', ['$http', function($http) {
 		},
 		set: function(value) {
 			buyTable = value;
-		},
-		getTotal: function() {
-	 		var totalPrice = 0;
-		  angular.forEach(buyTable, function(value) {
-		  	totalPrice += parseInt(value.price);
-		  });
-		  //buyTable.setBuyTable($scope.buyTable);
-		  return totalPrice;
 		},
     deleteElement: function(element) {
       var index = buyTable.indexOf(element);

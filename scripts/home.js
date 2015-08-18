@@ -13,7 +13,6 @@
 		$scope.title = 'My wish list';
 		$scope.slides = {};
 		$scope.buyTable = {};
-		$scope.totalPrice = 0;
 
 		/**
 		 * Get the carousel from json
@@ -28,7 +27,6 @@
 		buyTable.init(function(data) {
 	 		$scope.buyTable = data.buyTable;
 	 		buyTable.set($scope.buyTable);
-	 		$scope.totalPrice = buyTable.getTotal();
 	 	});
 
 		/**
@@ -36,7 +34,6 @@
 		 */
 	 	$scope.delete = function(element) {
 			buyTable.deleteElement(element);
-			$scope.totalPrice = buyTable.getTotal();
 	 	};
 
 	}]);

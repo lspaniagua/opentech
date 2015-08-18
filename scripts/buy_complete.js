@@ -12,7 +12,6 @@
 
 		$scope.title = 'Books you have just purchase';
 		$scope.buyTable = buyTable.get();
-		$scope.totalPrice = buyTable.getTotal();
 
 	}]);
 

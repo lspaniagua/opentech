@@ -3,12 +3,12 @@
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="1000">
   <!-- Indicators -->
   <ol class="carousel-indicators">
-    <li ng-repeat="slide in slides" data-target="#carousel-example-generic" data-slide-to="{{$index}}" ng-class="{ active: $index === 0}"></li>
+    <li ng-repeat="slide in slides" data-target="#carousel-example-generic" data-slide-to="{{$index}}" ng-class="{active : $first}"></li>
   </ol>
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
-    <div class="item" ng-class="{active: $index === 0}" ng-repeat="slide in slides">
+    <div class="item" ng-class="{active : $first}" ng-repeat="slide in slides">
       <img ng-src="{{slide.source}}" >
       <div class="carousel-caption">
         {{slide.caption}}
@@ -61,7 +61,7 @@
   </div>
 
   <div class="jumbotron pull-right">
-    <div>Total price: {{totalPrice | currency}}</div>
+    <div>Total price: {{buyTable | totalPrice | currency}}</div>
   	<a href="#/buy_complete" class="btn btn-default" class="pull-right">Purchase all</a>
   </div>
 </div>
